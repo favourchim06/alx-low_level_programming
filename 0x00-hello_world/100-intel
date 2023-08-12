@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CFILE="$1"
+OUTFILE="${CFILE%.c}.s"
+
+if [ -f "$CFILE" ]; then
+	gcc -S -masm=intel "$CFILE" -o "$OUTFILE" && echo "Assembly code saved in '$OUTFILE'"
+else
+	echo "Error: File '$CFILE' not found."
+fi
