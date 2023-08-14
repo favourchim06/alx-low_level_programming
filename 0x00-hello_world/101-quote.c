@@ -1,21 +1,25 @@
 #include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <fcntl.h>
+#include <string.h>
 
-#define STDERR_FD 2
 
+/**
+ * main - Entry point
+ *
+ * Return: Always 1 (success)
+ */
 
 int main(void)
 {
-	char *message = "and that piece of art is useful\" - Dora Kopar, 2015-10-19\n";
-	size_t message_len = 43; // Length of the message
+	char *quote = "and that piece of art is useful\" - Dora Kopar, 2015-10-19\n";
+	ssize_t len = strlen(quote);
+	ssize_t written = write(2, quote, len);
 
-	// Write the message to standard error (file descriptor 2)
-	if (write(STDERR_FD, message, message_len) != message_len) {
-		// If write fails, return 1
+	if (written != len) {
+		perror("write");
 		return 1;
 	}
 
-	// Return 0 to indicate success
-	return 0;
+	return 1;
 }
