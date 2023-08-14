@@ -10,12 +10,16 @@
  */
 int main(void)
 {
-	char digit;
-
-	for (digit = '0'; digit <= '9'; digit++)
-	{
-		putchar(digit);
-	}
+	putchar('0');
+	putchar('1');
+	putchar('2');
+	putchar('3');
+	putchar('4');
+	putchar('5');
+	putchar('6');
+	putchar('7');
+	putchar('8');
+	putchar('9');
 	putchar('\n'); /* Print a newline character */
 
 	return (0);
