@@ -1,14 +1,21 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * main - Entry point
+ * main - Entry point of the program.
  *
- * Description: Prints "_putchar" followed by a new line
- *
- * Return: Always 0 (Success)
+ * Return: Always returns 0 (Success).
  */
 int main(void)
 {
-	printf("_putchar\n");
-	return (0);
+    char str[] = "_putchar\n";
+    int i = 0;
+
+    while (str[i] != '\0')
+    {
+        _putchar(str[i]);
+        i++;
+    }
+
+    return 0;
 }
+
