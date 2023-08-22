@@ -6,14 +6,13 @@
  * @b: Pointer to the second integer
  *
  * Description: This function takes two pointers to integers as parameters
- * and swaps the values they point to.
+ *              and swaps the values they point to.
  */
 void swap_int(int *a, int *b)
 {
-    int temp;
+	int temp;
 
-    temp = *a;
-    *a = *b;
-    *b = temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
-
