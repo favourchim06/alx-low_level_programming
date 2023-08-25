@@ -1,65 +1,31 @@
 #include "main.h"
 
 /**
- * _putchar - Writes a character to the standard output (stdout)
- * @c: The character to be written
+ * _strcat - Concatenates two strings.
+ * @dest: Pointer to the destination string.
+ * @src: Pointer to the source string.
  *
- * Return: On success, 1. On error, -1 is returned.
- */
-int _putchar(char c)
-{
-    return write(1, &c, 1);
-}
-
-/**
- * _strcat - Concatenates two strings
- * @dest: The destination string
- * @src: The source string to append to dest
- *
- * Return: A pointer to the resulting string dest
+ * Return: Pointer to the resulting string `dest`.
  */
 char *_strcat(char *dest, char *src)
 {
-    char *temp = dest;
-    
-    while (*temp)
-        temp++;
-    
+    char *temp_dest = dest;
+
+    /* Move the dest pointer to the end of the destination string */
+    while (*temp_dest)
+        temp_dest++;
+
+    /* Copy characters from src to dest */
     while (*src)
     {
-        *temp = *src;
-        temp++;
+        *temp_dest = *src;
+        temp_dest++;
         src++;
     }
-    
-    *temp = '\0';
-    
+
+    /* Add the terminating null byte */
+    *temp_dest = '\0';
+
     return dest;
-}
-
-int concat_main(void) /* Renamed main to concat_main */
-{
-    int i;
-    char s1[98] = "Hello ";
-    char s2[] = "World!\n";
-    char *ptr;
-
-    for (i = 0; s1[i]; i++)
-        _putchar(s1[i]);
-    _putchar('\n');
-
-    for (i = 0; s2[i]; i++)
-        _putchar(s2[i]);
-
-    ptr = _strcat(s1, s2);
-
-    for (i = 0; s1[i]; i++)
-        _putchar(s1[i]);
-    for (i = 0; s2[i]; i++)
-        _putchar(s2[i]);
-    for (i = 0; ptr[i]; i++)
-        _putchar(ptr[i]);
-
-    return (0);
 }
 
